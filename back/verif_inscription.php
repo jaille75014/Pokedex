@@ -58,7 +58,7 @@
         // Vérification de son type
         $acceptable=['image/png','image/jpeg','image/gif'];
         if(!in_array($_FILES['image']['type'],$acceptable)){ // Permet de savoir si une valeur est dans un tableau, renvoie true si c'est le cas et non si ce n'est pas le cas
-            header('location: connexion.php?message=Le fichier doit être un jpeg, png ou gif, ne manipule pas mon code !&type=danger'); 
+            header('location: ../connexion.php?message=Le fichier doit être un jpeg, png ou gif, ne manipule pas mon code !&type=danger'); 
             exit;
         }
 
