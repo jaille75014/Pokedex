@@ -1,58 +1,24 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
-
 CREATE TABLE `pokemons` (
-  `id` int(11) NOT NULL,
-  `name` varchar(128) DEFAULT NULL,
-  `pv` int(11) DEFAULT NULL,
-  `attack` int(11) DEFAULT NULL,
-  `defense` int(11) DEFAULT NULL,
-  `speed` int(11) DEFAULT NULL,
-  `image` varchar(128) DEFAULT NULL,
-  `id_user` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(128),
+  `pv` INTEGER,
+  `attack` INTEGER,
+  `defense` INTEGER,
+  `speed` INTEGER,
+  `image` varchar(128),
+  `id_user` INTEGER REFERENCES users(id)
+);
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `pseudo` varchar(60) NOT NULL,
-  `email` varchar(128) NOT NULL,
-  `password` varchar(128) NOT NULL,
-  `image` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
+  `pseudo` varchar(60),
+  `email` varchar(128),
+  `password` varchar(128),
+  `image` varchar(128)
+);
 
 INSERT INTO `users` (`id`, `pseudo`, `email`, `password`, `image`) VALUES
 (1, 'test', 'test@test.com', '8020d1a33b77f2fbcb83d897ffdfbc5f6961a70952501a9d188d4c51fbc5caea', 'default.svg'),
 (2, 'sacha', 'sacha@gmail.com', '5a45b8c84b1913b4fb524660e709d1b81d694a028d2516297b0da4c259acbf7f', 'default.svg'),
 (3, 'mike', 'mike@gmail.com', '2f387d65802ef43966c601a4df111587df9782f8ce8cc8f7e8fa20bfd8a422f9', 'default.svg'),
 (4, 'Snow', 'snow@gmail.com', 'f67a0bec7a089d9f0c49621644be71f87ea24a23d1b66ed6bbb80818fe0f0bcc', 'default.svg');
-
-
-ALTER TABLE `pokemons`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_user` (`id_user`);
-
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
-
-ALTER TABLE `pokemons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
-
-ALTER TABLE `pokemons`
-  ADD CONSTRAINT `pokemons_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
