@@ -1,6 +1,8 @@
 <?php 
-    if (isset($_SESSION['email'])){
-        header('location:index.php'); // Redirection vers l'accueil
+    session_start();
+    // Vérifier si l'utilisateur n'est pas connecté
+    if (!isset($_SESSION['email'])) {
+        header('location: connexion.php'); // Redirection vers "connexion.php"
         exit;
     }
 ?>
