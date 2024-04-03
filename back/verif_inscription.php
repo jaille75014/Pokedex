@@ -1,8 +1,12 @@
 <?php 
     // Si un email a été envoyé et n'est pas vide > créer un cookie 'email'
-    if (isset($_POST['email'])&& !empty($_POST['email'])){
-        setcookie('email', $_POST['email'], time()+30*24*3600); // Cookie expire dans 30 jours
+    if (isset($_POST['email']) && !empty($_POST['email']) ){
+        setcookie('email', $_POST['email'], time()+30*24*3600,'/'); // Cookie expire dans 30 jours
+        // le paramètre '/' permet de spécifier que le cookie est disponible pour l'ensemble du domaine car en effet on ne le crée pas au même endroit que là où on l'utilise donc sans ça, ça ne marche pas
+    
     }
+
+    
     // Si l'email ou le mot de passe sont inexistants ou vides > redirection vers connexion.php
     // avec un msg dans l'url
 
@@ -14,7 +18,7 @@
             exit; //Interrompt le code
         }
 
-    // Si email invalide > redirection vers le formulaire avec un paramètre get "message" : "email invalide"
+    // Si email invalide > redirection vers le formulaire avec un paramètre get "messageError" : "email invalide"
     if (!filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){
         header('location: ../connexion.php?messageError=Email invalide !'); 
         exit;
