@@ -17,12 +17,12 @@
 
 		<main>
 
-			<div class="container">
-
-                <h1>BIENVENUE SUR LE POKEDEX DE L'ESGI</h1>
-
+			<div class="container_index">
+                <div class="centre">
                 <img src="assets/images/pikachu.png" alt="Pikachu" onclick="lancer_son();">
+                </div>
                 <script src="JS/script.js"></script>
+                <h1>BIENVENUE SUR LE POKEDEX DE L'ESGI</h1>
 
 			</div>
 		

@@ -32,16 +32,13 @@ main {
     margin: 1rem auto;
 }
 
-<<<<<<< HEAD
 .centre{
     display: flex;
     justify-content: center;
     padding-top: 50px;
 }
-h1 {
-=======
+
 main h1 {
->>>>>>> 34ff1d05f195a4f31368985495260aad9b342c84
     text-align: center;
     margin: 3rem;
 }
