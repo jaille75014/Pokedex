@@ -1,9 +1,7 @@
 <?php 
     session_start(); 
     include('includes/db.php');
-    //lknrveklvn
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -19,13 +17,11 @@
 
 		<main>
 
-			<div class="container_index">
+			<div class="container">
 
-                
-                <div class="centre">
-                <img src="assets/images/pikachu.png" alt="Pikachu" title="Clique !" width="37%" onclick="lancer_son();">
-                </div>
                 <h1>BIENVENUE SUR LE POKEDEX DE L'ESGI</h1>
+
+                <img src="assets/images/pikachu.png" alt="Pikachu" onclick="lancer_son();">
                 <script src="JS/script.js"></script>
 
 			</div>
