@@ -2,51 +2,55 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 17px;
 }
 
-html, body {
+/* html, body {
     height: 100%;
-}
+} */
 
 body {
     font-family: 'Lato';
-    display: flex;
-    min-height: calc(100vh - 60px); /* Modifie la hauteur minimale pour prendre en compte la hauteur du footer */
+    /* display: flex;
+    min-height: calc(100vh - 60px);  Modifie la hauteur minimale pour prendre en compte la hauteur du footer 
     flex-direction: column;
-    margin: 0;
+    margin: 0; */
 }
 
 main {
-    flex: 1;
     width: 1170px;
     margin:auto;
+    margin-top: 40px;
 }
 
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    width: 100%;
-    max-width: 1680px;
-    margin: 1rem auto;
-}
 
-.centre{
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-}
+
+
 
 main h1 {
     text-align: center;
-    margin: 3rem;
+    text-transform: uppercase;
+    font-size: 45px;
 }
 
 header, footer {
     background-color: #AAA;
     color: #FFF;
     padding: 15px 30px;
+}
+
+
+
+
+/* Pikachu de l'index.html  */
+.center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#pikachu{
+    width:50%;
 }
 
 /* Bonus : Le bas du footer ne puisse pas être au-dessus du bas de l’écran */
@@ -64,31 +68,28 @@ footer p {
 
 
 /* Header */
-.navbar {
+
+.containerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+header nav ul {
     list-style: none;
-    float: right;
+    display:flex;
 }
 
-.navbar li {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-.navbar li a {
+header ul li a {
     padding: 0.5em;
     text-decoration: none;
     color: #FFF;
 }
 
-.navbar-nav li a:hover {
-    text-decoration: underline;
+header ul li a:hover {
+    text-decoration : underline;
 }
 
-.navbar-brand {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 15px;
-}
 
 .navbar-brand img {
     height: 40px;
@@ -96,11 +97,23 @@ footer p {
 
 
 /* Connexion / Inscription */
+
+.containerConnexion {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    align-items: start;
+} 
+
 .form-container {
     width: 49%;
     border: 1px solid #ccc;
     padding: 20px;
     box-sizing: border-box;
+}
+
+.form-container h3 {
+    margin-bottom: 15px;
 }
 
 .form-connexion {
@@ -113,19 +126,19 @@ footer p {
 
 .form-container input[type=email],
 .form-container input[type=password],
-.form-container input[type=text],
-.form-container input[type=file] {
+.form-container input[type=text] {
     padding: 16px;
     font-size: 20px;
     border-radius: 4px;
     border: 1px solid #ccc;
     width: 100%;
-    box-sizing: border-box;
     margin-bottom: 10px;
 }
+.form-container input[type=file]{
+    margin-bottom:15px;
+}
 
-.form-container input[type=submit],
-.form-container button[type=submit] {
+.form-container input[type=submit] {
     background-color: #4CAF50;
     color: white;
     padding: 16px;
@@ -136,9 +149,30 @@ footer p {
     cursor: pointer;
 }
 
-.form-container input[type=submit]:hover,
-.form-container button[type=submit]:hover {
+.form-container input[type=submit]:hover {
     background-color: #45a049;
+}
+
+.messageError {
+    width:100%;
+    background-color : #B22222;
+    opacity : 70%;
+    padding: 20px;
+    color:#FFF;
+    text-align: center;
+    margin-top : 50px;
+    border-radius : 6px;
+}
+
+.messageSuccess {
+    width:100%;
+    background-color : olivedrab;
+    opacity : 50%;
+    padding: 20px;
+    color:#FFF;
+    text-align: center;
+    margin-top : 50px;
+    border-radius : 6px;
 }
 
 /* add_pokemon */

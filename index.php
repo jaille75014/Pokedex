@@ -16,16 +16,15 @@
 		<?php include("includes/header.php") ?>
 
 		<main>
+            <div class="center">
+                <img src="assets/images/pikachu.png" alt="Pikachu_image" id="pikachu" onclick="lancer_son();">
+            </div>
+            
+                
+            <h1>Bienvenue sur le pokedex de l'esgi</h1>
 
-			<div class="container_index">
-                <div class="centre">
-                <img src="assets/images/pikachu.png" alt="Pikachu" onclick="lancer_son();">
-                </div>
-                <script src="JS/script.js"></script>
-                <h1>BIENVENUE SUR LE POKEDEX DE L'ESGI</h1>
-
-			</div>
 		
+        <script src="JS/script.js"></script>
         </main>
         <?php include("includes/footer.php") ?>
     </body>

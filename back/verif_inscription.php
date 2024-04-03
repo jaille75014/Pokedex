@@ -10,25 +10,25 @@
         || empty($_POST['email'])
         || !isset($_POST['password'])
         || empty ($_POST['password'])) {
-            header("location: ../connexion.php?message=Vous devez remplir les 2 champs !" ); // Redirection vers connexion.php
+            header("location: ../connexion.php?messageError=Vous devez remplir les 2 champs !" ); // Redirection vers connexion.php
             exit; //Interrompt le code
         }
 
     // Si email invalide > redirection vers le formulaire avec un paramètre get "message" : "email invalide"
     if (!filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){
-        header('location: ../connexion.php?message=Email invalide !'); 
+        header('location: ../connexion.php?messageError=Email invalide !'); 
         exit;
     }
     
     // Vérification de la longueur du mot de passe
     if (strlen($_POST['password']) < 8){
-        header('location: ../connexion.php?message=Votre mot de passe doit faire 8 caractères minimum dont une majuscule, une minuscule et un chiffre !'); 
+        header('location: ../connexion.php?messageError=Votre mot de passe doit faire 8 caractères minimum dont une majuscule, une minuscule et un chiffre !'); 
         exit;
     }
 
     // Vérification de la présence d'au moins une majuscule, une minuscule et un chiffre
     if (!preg_match('/[A-Z]/', $_POST['password']) || !preg_match('/[a-z]/', $_POST['password']) || !preg_match('/[0-9]/', $_POST['password'])) {
-        header('location: ../connexion.php?message=Votre mot de passe doit contenir au moins une majuscule, une minuscule et un chiffre !'); 
+        header('location: ../connexion.php?messageError=Votre mot de passe doit contenir au moins une majuscule, une minuscule et un chiffre !'); 
         exit;
     }
 
@@ -47,7 +47,7 @@
     $req->execute(['email' => $_POST['email']]);
     $results = $req->fetchAll();
     if (!empty($results)) {
-        header('location: ../connexion.php?message=Email déjà utilisé !'); 
+        header('location: ../connexion.php?messageError=Email déjà utilisé !'); 
         exit;
     }
 
@@ -58,13 +58,13 @@
         // Vérification de son type
         $acceptable=['image/png','image/jpeg','image/gif'];
         if(!in_array($_FILES['image']['type'],$acceptable)){ // Permet de savoir si une valeur est dans un tableau, renvoie true si c'est le cas et non si ce n'est pas le cas
-            header('location: ../connexion.php?message=Le fichier doit être un jpeg, png ou gif, ne manipule pas mon code !&type=danger'); 
+            header('location: ../connexion.php?messageError=Le fichier doit être un jpeg, png ou gif, ne manipule pas mon code !&type=danger'); 
             exit;
         }
 
         $maxSize = 1024;
         if($_FILES['image']['size'] > $maxSize){ //  On vérifie si la taille est supérieure à 1Mo
-            header('location: ../connexion.php?message=Le fichier doit être inférieur à 1Mo !'); 
+            header('location: ../connexion.php?messageError=Le fichier doit être inférieur à 1Mo !'); 
             exit;
         }
 
@@ -104,10 +104,10 @@
         ]);
 
     if ($result){
-        header('location: ../connexion.php?message=Votre compte a bien été créé, veuillez vous connecter !');
+        header('location: ../connexion.php?messageSuccess=Votre compte a bien été créé, veuillez vous connecter !');
         exit;
     } else {
-        header('location: ../connexion.php?message=Erreur lors de la création du compte, veuillez recommencer !');
+        header('location: ../connexion.php?messageError=Erreur lors de la création du compte, veuillez recommencer !');
         exit;
     }
 
