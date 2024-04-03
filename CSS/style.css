@@ -18,7 +18,8 @@ body {
 
 main {
     flex: 1;
-    width: 100%;
+    width: 1170px;
+    margin:auto;
 }
 
 .container {
@@ -93,7 +94,6 @@ footer p {
     border: 1px solid #ccc;
     padding: 20px;
     box-sizing: border-box;
-    background: #f9f9f9;
 }
 
 .form-connexion {
