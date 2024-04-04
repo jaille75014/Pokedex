@@ -8,7 +8,7 @@ $q = 'SELECT name, pv, attack, defense, speed, image FROM pokemons';
 if(isset($_GET['tri'])) {
     $tri = $_GET['tri'];
     if ($tri == 'pv' || $tri == 'attack') {
-        $q .= ' ORDER BY ' . $tri . ' ASC'; // Par défaut, tri croissant
+        $q .= ' ORDER BY ' . $tri . ' ASC';
     }
 }
 
