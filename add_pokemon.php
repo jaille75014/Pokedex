@@ -41,7 +41,7 @@
             ?>
 
                 <!-- Formulaire inscription -->
-                <div class="form-container add-pokemon">
+                <div class="form-container2 add-pokemon">
                     <form method="post" action="back/verif_pokemon.php" enctype="multipart/form-data">
                         <div>
                             <input type="text" name="name" placeholder="Nom">
