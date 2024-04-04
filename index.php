@@ -17,7 +17,7 @@
 
 		<main>
             <div class="center">
-                <img src="assets/images/pikachu.png" alt="Pikachu_image" id="pikachu" onclick="lancer_son();">
+                <img src="assets/images/pikachu.png" alt="Pikachu_image" id="pikachu" title="Appuyez sur Pikachu en mettant votre son au maximum !" onclick="lancer_son()";>
             </div>
             
                 
