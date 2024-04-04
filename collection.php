@@ -1,4 +1,5 @@
 <?php
+session_start(); // Démarrer la session
 include("includes/db.php");
 
 $q = 'SELECT name, pv, attack, defense, speed, image FROM pokemons';

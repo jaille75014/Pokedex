@@ -107,6 +107,7 @@
         'image'=>isset($fileName)?$fileName : 'default.svg'
         ]);
 
+        
     if ($result){
         header('location: ../connexion.php?messageSuccess=Votre compte a bien été créé, veuillez vous connecter !');
         exit;

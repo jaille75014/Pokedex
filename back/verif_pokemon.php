@@ -1,6 +1,5 @@
 <?php 
-
-$id_user = $_SESSION['user_id'];
+session_start(); // Démarrer la session
 
 // Vérifier si tous les champs du formulaire sont remplis
 if(empty($_POST['name']) || empty($_POST['pv']) || empty($_POST['attack']) || empty($_POST['defense']) || empty($_POST['speed']) || empty($_FILES['image']['name'])) {
@@ -9,6 +8,12 @@ if(empty($_POST['name']) || empty($_POST['pv']) || empty($_POST['attack']) || em
 }
 
 include("../includes/db.php");
+
+// Selectionner l'id de l'user
+$id_user = 'SELECT id FROM users WHERE email=:email';
+$req = $bdd->prepare($id_user);
+$req->execute(['email' => $_SESSION['email']]);
+$result_user = $req->fetch(PDO::FETCH_ASSOC);
 
 // Vérifier si le nom du Pokémon est déjà utilisé
 $q = 'SELECT id FROM pokemons WHERE name=:name';
@@ -52,7 +57,7 @@ if($_FILES['image']['error'] != 4) { // Si un fichier a été uploadé
 $q = 'INSERT INTO pokemons (id_user, name, pv, attack, defense, speed, image) VALUES (:id_user, :name, :pv, :attack, :defense, :speed, :image)';
 $req = $bdd->prepare($q);
 $result = $req->execute([
-    'id_user' => $id_user,
+    'id_user' => $result_user['id'],
     'name' => $_POST['name'],
     'pv' => $_POST['pv'], 
     'attack' => $_POST['attack'], 

@@ -2,20 +2,18 @@
     session_start(); // Démarrer la session
 
     // Vérifier si l'utilisateur est connecté
-    if (!isset($_SESSION['user_id'])) {
-        header('location: connexion.php');
+    if (!isset($_SESSION['email'])) {
+        header('location: connexion.php?messageError=Mr Sombié arretez de hacker notre site !');
         exit;
     }
 
     include("includes/db.php");
 
-    // Récupérer l'ID de l'utilisateur depuis la session
-    $user_id = $_SESSION['user_id'];
 
     // Requête pour récupérer les informations de l'utilisateur
-    $q = 'SELECT pseudo, email, image FROM users WHERE id = :user_id';
+    $q = 'SELECT pseudo, image, email FROM users WHERE email = :email';
     $req = $bdd->prepare($q);
-    $req->execute(['user_id' => $user_id]);
+    $req->execute(['email' => $_SESSION['email']]);
     $user_info = $req->fetch(PDO::FETCH_ASSOC);
 
     // Vérifier si des informations ont été trouvées
