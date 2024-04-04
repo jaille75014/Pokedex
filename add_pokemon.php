@@ -25,6 +25,21 @@
 
             <div class="container">
 
+            <?php 
+            if(isset($_GET['messageError'])&&!empty($_GET['messageError'])){
+                echo '<div class="messageError">
+                            <p>'.htmlspecialchars($_GET['messageError']).'<p>
+                      </div>';
+
+            }
+            if(isset($_GET['messageSuccess'])&&!empty($_GET['messageSuccess'])){
+                echo '<div class="messageSuccess">
+                            <p>'.htmlspecialchars($_GET['messageSuccess']).'<p>
+                      </div>';
+
+            }
+            ?>
+
                 <!-- Formulaire inscription -->
                 <div class="form-container add-pokemon">
                     <form method="post" action="back/verif_pokemon.php" enctype="multipart/form-data">

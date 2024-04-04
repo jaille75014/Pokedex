@@ -3,7 +3,7 @@ session_start(); // Démarrer la session
 
 // Vérifier si tous les champs du formulaire sont remplis
 if(empty($_POST['name']) || empty($_POST['pv']) || empty($_POST['attack']) || empty($_POST['defense']) || empty($_POST['speed']) || empty($_FILES['image']['name'])) {
-    header("location: ../add_pokemon.php?message=Vous devez remplir tous les champs !");
+    header("location: ../add_pokemon.php?messageError=Vous devez remplir tous les champs !");
     exit; //Interrompt le code
 }
 
@@ -21,7 +21,7 @@ $req = $bdd->prepare($q);
 $req->execute(['name' => $_POST['name']]);
 $results = $req->fetchAll();
 if (!empty($results)) {
-    header('location: ../add_pokemon.php?message=Nom déjà utilisé !'); 
+    header('location: ../add_pokemon.php?messageError=Nom déjà utilisé !'); 
     exit;
 }
 
@@ -31,13 +31,13 @@ if($_FILES['image']['error'] != 4) { // Si un fichier a été uploadé
     // Vérification de son type
     $acceptable = ['image/png', 'image/jpeg', 'image/gif'];
     if(!in_array($_FILES['image']['type'], $acceptable)) {
-        header('location: ../add_pokemon.php?message=Le fichier doit être un jpeg, png ou gif, ne manipule pas mon code !&type=danger'); 
+        header('location: ../add_pokemon.php?messageError=Le fichier doit être un jpeg, png ou gif, ne manipule pas mon code !&type=danger'); 
         exit;
     }
 
     $maxSize = 5 * 1024 * 1024; // Taille maximale autorisée : 5 Mo
     if($_FILES['image']['size'] > $maxSize) { 
-        header('location: ../add_pokemon.php?message=Le fichier doit être inférieur à 5Mo !'); 
+        header('location: ../add_pokemon.php?messageError=Le fichier doit être inférieur à 5Mo !'); 
         exit;
     }
 
@@ -67,10 +67,10 @@ $result = $req->execute([
 ]);
 
 if ($result) {
-    header('location: ../add_pokemon.php?message=Votre pokemon a bien été créé !');
+    header('location: ../add_pokemon.php?messageSuccess=Votre pokemon a bien été créé !');
     exit;
 } else {
-    header('location: ../add_pokemon.php?message=Erreur lors de la création du pokemon, veuillez recommencer !');
+    header('location: ../add_pokemon.php?messageError=Erreur lors de la création du pokemon, veuillez recommencer !');
     exit;
 }
 ?>

@@ -3,7 +3,7 @@
 
     // Vérifier si l'utilisateur est connecté
     if (!isset($_SESSION['email'])) {
-        header('location: connexion.php?messageError=Mr Sombié arretez de hacker notre site !');
+        header('location: connexion.php?messageError=Monsieur Sombié arretez de hacker notre site svp !');
         exit;
     }
 
