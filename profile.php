@@ -32,18 +32,23 @@
     ?>    
     
     <body>
+        <div class="container">
 
-        <?php include("includes/header.php") ?>
+            <?php include("includes/header.php") ?>
 
-        <h1>MON COMPTE</h1>
+            <h1>MON COMPTE</h1>
 
-        <h3>Mes infos</h3>
+            <h3>Mes infos</h3>
 
-        <p><strong>Pseudo:</strong> <?= $user_info['pseudo'] ?></p>
-        <p><strong>Email:</strong> <?= $user_info['email'] ?></p>
-        <p><strong>Image de profil:</strong> <img src="<?= $user_info['image'] ?>" alt="Image de profil"></p>
+            <p><strong>Pseudo:</strong> <?= $user_info['pseudo'] ?></p>
+            <p><strong>Email:</strong> <?= $user_info['email'] ?></p>
+            <p><strong>Image de profil:</strong> <img src="<?= $user_info['image'] ?>" alt="Image de profil"></p>
 
-        <hr>
+            <hr>
+            
+        </div>
+
+        
 
     </body>
 </html>

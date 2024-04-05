@@ -17,7 +17,8 @@ body {
     margin: 0; */
 }
 
-main {
+
+.container{
     width: 1170px;
     margin:auto;
     margin-top: 40px;
@@ -54,9 +55,12 @@ header, footer {
 #pikachu{
     width:50%;
 }
+#pikachu:hover{
+    cursor: pointer;
+}
 
 /* Bonus : Le bas du footer ne puisse pas être au-dessus du bas de l’écran */
-footer {
+/* footer {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -66,7 +70,7 @@ footer {
 footer p {
     justify-content: center;
     text-align: center;
-}
+} */
 
 
 /* Header */
