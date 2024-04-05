@@ -30,7 +30,7 @@ $pokemons = $req->fetchAll(PDO::FETCH_ASSOC);
         <?php include("includes/header.php") ?>
 
         <div class="container">
-            <div class="collection">
+            
 
             <h1>TOUS LES POKÉMONS</h1>
 
@@ -58,7 +58,7 @@ $pokemons = $req->fetchAll(PDO::FETCH_ASSOC);
                 <?php endforeach; ?>
             </ul>
 
-        </div>
+        
         </div>
         
     </body>

@@ -231,10 +231,7 @@ header ul li a:hover {
     padding-right: 10px;
 }
 
-.collection {
-    padding-left: 150px;
-    padding-right: 150px;
-}
+
 
 ul {
     display: flex;
