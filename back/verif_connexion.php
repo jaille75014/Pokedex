@@ -12,13 +12,13 @@
         || empty($_POST['email'])
         || !isset($_POST['password'])
         || empty ($_POST['password'])){
-            header('location: ../connexion.php?message=Vous devez remplir les 2 champs !'); // Redirection vers connexion.php
+            header('location: ../connexion.php?messageError=Vous devez remplir les 2 champs !'); // Redirection vers connexion.php
             exit; //Interrompt le code
         }
 
     // Si email invalide > redirection vers le formulaire avec un paramètre get "message" : "email invalide"
     if (!filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){
-        header('location: ../connexion.php?message=Email invalide !'); 
+        header('location: ../connexion.php?messageError=Email invalide !'); 
         exit;
     }
     
@@ -45,7 +45,7 @@
     $results=$req->fetchAll();
     // 6-Si results est vide alors on redirige
     if (empty($results)){
-        header('location: ../connexion.php?message=Adresse mail ou mot de passe incorrect !'); 
+        header('location: ../connexion.php?messageError=Adresse mail ou mot de passe incorrect !'); 
         exit;
     }
 
