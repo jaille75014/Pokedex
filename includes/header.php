@@ -18,7 +18,7 @@
                     }else {
                         echo '<li><a href="add_pokemon.php">Ajouter Pokemon</a></li>';
                         echo '<li><a href="profile.php">Mon compte</a></li>';
-                        echo '<li><a href="deconnexion.php">Deconnexion</a></li>';
+                        echo '<li><a href="deconnexion.php">Déconnexion</a></li>';
                     }
                 ?>
                 
