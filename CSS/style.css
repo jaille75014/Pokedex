@@ -2,12 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 17px;
 }
 
-/* html, body {
-    height: 100%;
-} */
+
+html{
+    font-size: 17px;
+}
 
 body {
     font-family: 'Lato';
@@ -267,12 +267,17 @@ li.flexbox {
     background-color: #bd1d75; 
 }
 
+
 .barre {
     height: 45px; 
     font-size: 25px;
 }
 
+/* Page Profile */
 
+h2{
+    
+}
 
 /* Media queries */
 @media (max-width: 768px) {

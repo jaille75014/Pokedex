@@ -66,7 +66,7 @@
             exit;
         }
 
-        $maxSize = 1024;
+        $maxSize = 1024*1024;
         if($_FILES['image']['size'] > $maxSize){ //  On vérifie si la taille est supérieure à 1Mo
             header('location: ../connexion.php?messageError=Le fichier doit être inférieur à 1Mo !'); 
             exit;
@@ -85,7 +85,7 @@
         // Risque de doublon si 2 personnes s'inscrit à la même seconde avec la même extension
 
 
-        $to='asset/uploads/'.$fileName; // Nom original du fichier
+        $to='../assets/uploads/'.$fileName; // Nom original du fichier
         move_uploaded_file($from,$to);
 
     }
