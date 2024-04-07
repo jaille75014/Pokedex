@@ -11,16 +11,26 @@
 
 
     // Requête pour récupérer les informations de l'utilisateur
-    $q = 'SELECT pseudo, image, email FROM users WHERE email = :email';
+    $q = 'SELECT id,pseudo, image, email FROM users WHERE email = :email';
     $req = $bdd->prepare($q);
     $req->execute(['email' => $_SESSION['email']]);
     $user_info = $req->fetch(PDO::FETCH_ASSOC);
 
     // Vérifier si des informations ont été trouvées
-    if (!$user_info) {
+    if (!isset($user_info)) {
         echo "Aucune information trouvée pour cet utilisateur.";
         exit;
     }
+
+    $q2='SELECT name,pv,attack,defense,speed,image FROM pokemons WHERE id_user = ? ;';
+    $req2= $bdd->prepare($q2);
+    $req2->execute([
+        $user_info['id']
+    ]);
+    $pokemons = $req2->fetchAll(PDO::FETCH_ASSOC);
+    
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -44,17 +54,50 @@
 
                 <h2>Mes infos</h2>
 
-                <p><strong>Pseudo:</strong> <?= $user_info['pseudo'] ?></p>
-                <p><strong>Email:</strong> <?= $user_info['email'] ?></p>
-                <p><strong>Image de profil:</strong> <img src="assets/uploads/<?=$user_info['image']?>" alt="Image de profil"></p>
+                <p><span class="gras">Pseudo:</span> <?= $user_info['pseudo'] ?></p>
+                <p><span class="gras">Email:</span> <?= $user_info['email'] ?></p>
+                <figure>
+                    <figcaption><p><span class="gras">Image de profil:</span> </p></figcaption>
+                    <img class="img_profile" src="assets/uploads/<?=$user_info['image']?>" alt="Image de profil">
+                </figure>
+                
 
                 <hr>
+                <h2>Mes pokemons</h2>
+                    <div class="pokemon">
+                        <?php 
+                        foreach($pokemons as $pokemon){
+                            echo '
+                            <figure>
+                                <figcaption>
+                                    <ul class="ul_profile">
+                                        <li><h3>'.$pokemon['name'].'</h3></li>
+                                        <li>PV : '.$pokemon['pv'].'</li>
+                                        <li>Attaque : '.$pokemon['attack'].'</li>
+                                        <li>Défense : '.$pokemon['defense'].'</li>
+                                        <li>Vitesse : '.$pokemon['speed'].'</li>
+                                        
+                                    </ul>
+                                </figcaption>
+                                <img class="image_pokemon" alt="image pokemon" src="assets/uploads/'.$pokemon['image'].'">
+                            
+                            
+                            </figure>';
+                        }
+                
+                
+                        ?>
+                    </div>
+                
+
+                
+
             
             </div>
         </main>
         
 
-        <?php include("includes/header.php") ?>
+        <?php include("includes/footer.php") ?>
 
         
 
