@@ -8,12 +8,13 @@
 html{
     font-size: 17px;
     font-family: 'Lato';
+    height:100%;
 }
 
 
 
 .container{
-    width: 1170px;
+    max-width: 1170px;
     margin:auto;
     margin-top: 40px;
 }
@@ -53,18 +54,19 @@ header, footer {
 }
 
 /* Bonus : Le bas du footer ne puisse pas être au-dessus du bas de l’écran */
-main{
-   margin:100px; 
+body{
+    min-height:100%;
+    position:relative;
+    padding-bottom: 50px;
 }
 
 footer{
-    position: ; 
+    position: absolute; 
     bottom: 0;
     width:100%;
 }
 
 footer p {
-    justify-content: center;
     text-align: center;
 } 
 
