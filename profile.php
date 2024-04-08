@@ -56,8 +56,8 @@
 
                 <p><span class="gras">Pseudo:</span> <?= $user_info['pseudo'] ?></p>
                 <p><span class="gras">Email:</span> <?= $user_info['email'] ?></p>
-                <figure>
-                    <figcaption><p><span class="gras">Image de profil:</span> </p></figcaption>
+                <figure class="figure_profile">
+                    <figcaption><p><span class="gras">Image de profil : </span> </p></figcaption>
                     <img class="img_profile" src="assets/uploads/<?=$user_info['image']?>" alt="Image de profil">
                 </figure>
                 
@@ -68,9 +68,9 @@
                         <?php 
                         foreach($pokemons as $pokemon){
                             echo '
-                            <figure>
+                            <figure class="figure_pokemon">
                                 <figcaption>
-                                    <ul class="ul_profile">
+                                    <ul class="ul_pokemon">
                                         <li><h3>'.$pokemon['name'].'</h3></li>
                                         <li>PV : '.$pokemon['pv'].'</li>
                                         <li>Attaque : '.$pokemon['attack'].'</li>

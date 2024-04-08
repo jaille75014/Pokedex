@@ -13,7 +13,7 @@
 
                 <?php 
                     if (!isset($_SESSION['email'])){
-                        echo '<li><a href="connexion.php">Connexion / Inscription</a></li>';
+                        echo '<li><a href="connexion.php">Connexion</a></li>';
 
                     }else {
                         echo '<li><a href="add_pokemon.php">Ajouter Pokemon</a></li>';

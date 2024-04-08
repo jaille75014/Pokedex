@@ -7,6 +7,11 @@ if(empty($_POST['name']) || empty($_POST['pv']) || empty($_POST['attack']) || em
     exit; //Interrompt le code
 }
 
+if(!is_numeric($_POST['pv'])||!is_numeric($_POST['attack'])||!is_numeric($_POST['defense'])||!is_numeric($_POST['speed'])){
+    header("location: ../add_pokemon.php?messageError=Vous devez entrer que des nombres pour PV, Attaque, Défense et Vitesse !");
+    exit; //Interrompt le code
+}
+
 include("../includes/db.php");
 
 // Selectionner l'id de l'user

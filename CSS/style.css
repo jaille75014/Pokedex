@@ -269,15 +269,16 @@ li.flexbox {
 
 
 .barre {
-    height: 45px; 
-    font-size: 25px;
+    height: 1.7em; 
+    text-align: center;
 }
+
 
 /* Page Profile */
 
 h2{
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 1.2rem;
 }
 
 .gras {
@@ -288,13 +289,28 @@ h2{
 .img_profile{
     width:120px;
     height : 120px;
+    object-fit: cover;
+    object-position: top center;
+    aspect-ratio: 1/1;
 }
 
-figure{
+.figure_pokemon{
     margin-top: 20px;
     display:flex;
+    width:33%;
 }
-.ul_profile {
+
+.figure_profile{
+    display:flex;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.figure_profile figcaption{
+    margin-right : 1rem;
+}
+
+.ul_pokemon {
     list-style: none;
     display:flex;
     flex-direction: column;
@@ -303,20 +319,22 @@ figure{
     font-size : 12px;
 }
 
-.ul_profile h3{
+.ul_pokemon h3{
     margin-bottom : 15px;
 }
 
 .image_pokemon{
     width:150px;
     height: 150px;
-    object-fit: cover;
+    object-fit: contain;
     object-position: top center;
+    aspect-ratio: 1/1;
 }
 
 .pokemon{
     display:flex;
     flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
 /* Media queries */
