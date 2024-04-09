@@ -182,11 +182,11 @@ header ul li a:hover {
 }
 
 /* add_pokemon */
-.add-pokemon {
+.form-container2 {
     justify-content: center;
 }
 
-.form-container2.add-pokemon button {
+.form-container2 button {
     background-color: #4CAF50;
     color: white;
     padding: 16px;
@@ -376,12 +376,14 @@ h2{
         width:100%;
     }
 
-    /* Collection */
+    /* Collection / profile */
 
-    .pokemon{
-        flex-direction: column;
-        margin-bottom: 30px;
+
+    .figure_pokemon{
+        width:50%;
     }   
+
+    
 
     /* Connexion / inscription  */
 
@@ -396,10 +398,59 @@ h2{
         margin-bottom:2rem;
     }
 
+    .form-container input[type=email],
+    .form-container input[type=password],
+    .form-container input[type=text] {
+        padding: 1rem ;
+        font-size: 1rem;
+    }
+
+
+    .form-container input[type=submit] {
+        padding: 1rem ;
+        font-size: 1rem;
+        
+    }
+
+    /* ADD POKEMON */
+
+    .form-container2 button {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .form-container2 input[type=email],
+    .form-container2 input[type=password],
+    .form-container2 input[type=text] {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    /* MESSAGE */
+
+    .messageError {
+        padding: 1rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .messageSuccess {
+        padding: 1rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
 
 
 }
 
+
+@media screen and (max-width:580px){
+    .pokemon{
+        flex-direction: column;
+        width:80%;
+    }    
+    
+}
     
 
 
