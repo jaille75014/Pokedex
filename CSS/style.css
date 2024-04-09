@@ -165,6 +165,7 @@ header ul li a:hover {
     color:#FFF;
     text-align: center;
     margin-top : 50px;
+    margin-bottom : 50px;
     border-radius : 6px;
 }
 
@@ -176,6 +177,7 @@ header ul li a:hover {
     color:#FFF;
     text-align: center;
     margin-top : 50px;
+    margin-bottom : 50px;
     border-radius : 6px;
 }
 
@@ -332,48 +334,72 @@ h2{
     display:flex;
     flex-wrap: wrap;
     margin-bottom: 30px;
-}
+}   
+
+
 
 /* Media queries */
-@media (max-width: 768px) {
-    .navbar {
-        float: none;
-        text-align: center;
-    }
 
-    .navbar li {
-        display: block;
-        margin: 10px 0;
-    }
+/* Format tablette */
 
+@media screen and (max-width: 900px) {
+
+    html{
+        font-size:12px;
+    }
     .container {
+        max-width: 80%;
+    }
+
+
+    /* HEADER */
+    
+    .navbar-brand img {
+        height: 30px;
+    }
+
+    .containerHeader{
+        flex-direction: column;
+        
+    }
+    header ul  {
+        justify-content: center;
+        margin-top: 1rem;;
+    } 
+
+    /* INDEX */
+
+    h1{
+        font-size:2rem;
+    }
+    #pikachu{
+        width:100%;
+    }
+
+    /* Collection */
+
+    .pokemon{
+        flex-direction: column;
+        margin-bottom: 30px;
+    }   
+
+    /* Connexion / inscription  */
+
+
+    .containerConnexion {
         flex-direction: column;
         align-items: center;
+    } 
+
+    .form-container{
+        width:100%;
+        margin-bottom:2rem;
     }
 
-    .form-container {
-        width: 80%;
-        margin: 10px 0;
-    }
 
-    .form-connexion, .form-inscription {
-        margin-right: 0;
-        margin-left: 0;
-    }
+
 }
 
-@media (max-width: 480px) {
-    .form-container input[type=email],
-    .form-container input[type=password],
-    .form-container input[type=text],
-    .form-container input[type=file],
-    .form-container input[type=submit],
-    .form-container button[type=submit] {
-        font-size: 16px;
-        padding: 12px;
-    }
+    
 
-    header, footer {
-        padding: 10px 20px;
-    }
-}
+
