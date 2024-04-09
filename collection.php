@@ -36,8 +36,8 @@ $pokemons = $req->fetchAll(PDO::FETCH_ASSOC);
             <h1>TOUS LES POKÉMONS</h1>
 
             <form method="GET" class="centre">
-                <label for="tri" class="trier_par">Trier par :</label>
-                <select name="tri" class="barre">
+                <label for="tri" class="inputSelectCollection">Trier par :</label>
+                <select name="tri" class="inputSubmitCollection">
                     <?php if(!isset($_GET['tri'])||empty($_GET['tri'])) {
                     ?>
                     <option value="pv">PV</option>
@@ -48,7 +48,7 @@ $pokemons = $req->fetchAll(PDO::FETCH_ASSOC);
                     <?php } ?>
 
                 </select>
-                <button type="submit" class="trie">Trier</button>
+                <button type="submit" class="buttonTri">Trier</button>
             </form>
 
 

@@ -225,10 +225,9 @@ header ul li a:hover {
     margin-bottom: 20px;
 }
 
-.trier_par {
+.inputSelectCollection {
     padding-right: 10px;
 }
-
 
 
 ul {
@@ -249,7 +248,7 @@ li.flexbox {
     padding-right: 20px;
 }
 
-.trie{
+.buttonTri{
     background-color: #4CAF50; 
     color: white; 
     padding: 0.5rem;
@@ -261,12 +260,12 @@ li.flexbox {
     margin-left: 10px;
 }
 
-.trie:hover {
+.buttonTri:hover {
     background-color: #bd1d75; 
 }
 
 
-.barre {
+.inputSubmitCollection {
     height: 1.7em; 
     text-align: center;
 }
