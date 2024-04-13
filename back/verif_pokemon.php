@@ -36,7 +36,7 @@ if($_FILES['image']['error'] != 4) { // Si un fichier a été uploadé
     // Vérification de son type
     $acceptable = ['image/png', 'image/jpeg', 'image/gif'];
     if(!in_array($_FILES['image']['type'], $acceptable)) {
-        header('location: ../add_pokemon.php?messageError=Le fichier doit être un jpeg, png ou gif, ne manipule pas mon code !&type=danger'); 
+        header('location: ../add_pokemon.php?messageError=Le fichier doit être un jpeg, png ou gif, ne manipules pas mon code !&type=danger'); 
         exit;
     }
 

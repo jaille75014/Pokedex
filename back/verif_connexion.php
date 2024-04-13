@@ -58,6 +58,6 @@
 
 
     // Redirection vers l'accueil 
-    header('location: ../index.php?messageSuccess=Vous êtes bien connecté.');
+    header('location: ../index.php?messageSuccess=Vous êtes bien connecté(e).');
     exit;
 ?>
